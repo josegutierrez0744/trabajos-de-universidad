@@ -1,0 +1,27 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar nueva palabra</title>
+</head>
+<body>
+    <h1>Agregar nueva palabra</h1>
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    {% if message %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endif %}
+    <form method="POST">
+        <div class="form-group">
+            <label for="palabra">Palabra:</label>
+            <input type="text" class="form-control" id="palabra" name="palabra" required>
+        </div>
+        <div class="form-group">
+            <label for="significado">Definición:</label>
+            <textarea class="form-control" id="significados" name="significado" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+</body>
+</html>
