@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buscar palabra - Diccionario</title>
+  </head>
+  <body>
+    <h1>Buscar palabra</h1>
+    <form method="POST">
+      <label for="word">Palabra:</label>
+      <input type="text" id="word" name="word" required>
+      <br>
+      <input type="submit" value="Buscar">
+    </form>
+    {% if word %}
+      <h2>{{ word }}</h2>
+      {% if definition %}
+        <p>{{ definition }}</p>
+      {% else %}
+        <p>No se encontró una definición para esta palabra.</p>
+      {% endif %}
+    {% endif %}
+    <a href="{{ url_for('home') }}">Volver al inicio</a>
+    
+  </body>
+</html>

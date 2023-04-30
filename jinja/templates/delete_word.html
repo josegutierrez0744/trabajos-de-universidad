@@ -1,0 +1,17 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar palabra</title>
+</head>
+<body>
+    <h1>Eliminar palabra</h1>
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    <p>¿Está seguro que desea eliminar la palabra "{{ word }}"?</p>
+    <form method="POST">
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+    </form>
+    <a href="{{ url_for('home') }}" class="btn btn-secondary">Volver</a>
+</body>
+</html>
