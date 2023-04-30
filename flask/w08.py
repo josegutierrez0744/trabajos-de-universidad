@@ -29,7 +29,7 @@ def agregar_palabra():
             error = 'La palabra "{}" ya existe en el diccionario.'.format(palabra)
     return render_template('agregar_palabra.html', error=error)
 
-@app.route('/editar/<palabra>', methods=['GET', 'POST'])
+@app.route('/editar', methods=['GET', 'POST'])
 def editar_palabra(palabra):
     palabra_existente = collection.find_one({'palabra': palabra})
     if palabra_existente is None:
@@ -42,7 +42,7 @@ def editar_palabra(palabra):
             return render_template('index.html')
         return render_template('editar_palabra.html', palabra=palabra, significado=significado)
 
-@app.route('/eliminar/<palabra>', methods=['GET', 'POST'])
+@app.route('/eliminar', methods=['GET', 'POST'])
 def eliminar_palabra(palabra):
     palabra_existente = collection.find_one({'palabra': palabra})
     if palabra_existente is None:
