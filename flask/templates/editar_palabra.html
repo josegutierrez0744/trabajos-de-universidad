@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Editar palabra</title>
+</head>
+<body>
+    <h1>Editar palabra</h1>
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    <form method="POST">
+        <div class="form-group">
+            <label for="palabra">Palabra:</label>
+            <input type="text" class="form-control" id="palabra" name="palabra" value="{{ palabra }}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="significado">significado:</label>
+            <textarea class="form-control" id="significado" name="significado" required>{{ significado }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    <a href="{{ url_for('home') }}" class="btn btn-secondary">Volver</a>
+</body>
+</html>

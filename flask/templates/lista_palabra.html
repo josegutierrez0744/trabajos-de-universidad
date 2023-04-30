@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de palabras</title>
+</head>
+<body>
+    <h1>Lista de palabras</h1>
+    <p>A continuación se muestra la lista de palabras y sus definiciones:</p>
+    <ul>
+        {% for palabra in palabras %}
+        <li><strong>{{ palabra.palabra }}</strong>: {{palabra.significado }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="/">Volver al inicio</a></p>
+</body>
+</html>
+
+
+
